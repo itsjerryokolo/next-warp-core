@@ -1,0 +1,67 @@
+:root {
+  font-size: 8px;
+  font-family: var(--font1);
+  position: relative;
+
+  /* COLORS */
+
+
+  /* FONTS */
+  --font1:  'Roboto', sans-serif;
+
+  /* BREAKPOINTS */
+  --tabletBreakpoint: 1000px;
+  --smallLaptopBreakpoint: 1441px;
+  --largeScreenBreakpoint: 1919px;
+
+  /* TRANSITIONS */
+
+
+  /* SHADOWS */
+
+}
+
+body {
+  background-color:#fafafa ;
+  color: #232229;
+}
+
+input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+button {
+  border: none;
+  cursor: pointer;
+  background: none;
+  user-select: none;
+  color: inherit;
+  font: inherit;
+}
+button:focus {
+  outline: none;
+}
+li {
+  list-style: none;
+}
+a {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+a:focus {
+  outline: none;
+}
+
+@media screen and (min-width: 1301px) {
+  :root {
+    font-size: 10px;
+  }
+}
+
