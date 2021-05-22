@@ -38,7 +38,7 @@ madge(path.join(__dirname, ".."), {
 		});
 		process.exit(1);
 	} else {
-		console.log("🎉 No used files!");
+		console.log("🎉 No unused files!");
 		process.exit(0);
 	}
 });

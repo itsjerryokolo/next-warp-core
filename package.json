@@ -8,9 +8,14 @@
     "start": "next start",
     "analyze": "cross-env ANALYZE=true next build",
     "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
-    "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
+    "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build",
+    "analyse:base": "madge src/ --extensions ts,tsx",
+    "analyse:unused": "node scripts/detect-unused.js",
+    "analyse:circular": "yarn analyse:base --circular",
+    "analyse:orphans": "yarn analyse:base --orphans"
   },
   "dependencies": {
+    "@emotion/styled": "^11.3.0",
     "@ethersproject/providers": "^5.2.0",
     "@web3-react/core": "^6.1.9",
     "@web3-react/injected-connector": "^6.0.7",
