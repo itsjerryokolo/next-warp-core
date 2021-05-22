@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useState, useEffect, useContext } from "react";
 import Web3 from "web3";
 import {
   getWeb3Contracts,
@@ -73,4 +73,8 @@ export function ContractProvider(props: any) {
       {props.children}
     </ContractContext.Provider>
   );
+}
+
+export function useContracts() {
+  return useContext(ContractContext);
 }

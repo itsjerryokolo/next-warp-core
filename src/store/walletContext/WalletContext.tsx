@@ -1,13 +1,13 @@
 import React, { useContext, useState, useEffect, createContext } from "react";
-import { StoreContext } from "../store/store";
-import { isMetamaskEnabled } from "../wallets/utils";
+import { StoreContext } from "../store";
+import { isMetamaskEnabled } from "../../wallets/utils";
 import { useWeb3React } from "@web3-react/core";
-import { useToggle } from "../hooks";
-import { injectedConnector, portis } from "../wallets/connectors";
-import { Metamask, Portis } from "../components/Icons";
+import { useToggle } from "../../hooks";
+import { injectedConnector, portis } from "../../wallets/connectors";
+import { Metamask, Portis } from "../../components/Icons";
 import Web3 from "web3";
-import { ContractContext } from "../store/contractContext/contractContext";
-import MyApp from "../pages/_app";
+import { ContractContext } from "../contractContext/contractContext";
+import MyApp from "../../pages/_app";
 
 interface ContextProps {
 	wallet: any;
@@ -153,4 +153,8 @@ export default function WalletProvider(props: Props) {
 			{props.children}
 		</WalletContext.Provider>
 	);
+}
+
+export function useWallets() {
+	return useContext(WalletContext);
 }

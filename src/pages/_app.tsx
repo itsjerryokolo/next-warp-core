@@ -1,21 +1,14 @@
 import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import { AppProps } from 'next/app'
 import { StoreProvider } from ".././store/store";
 import { ThemeProvider } from ".././store/themeContext/themeContext";
 import { Web3ReactProvider } from "@web3-react/core";
 import { ContractProvider } from ".././store/contractContext/contractContext";
-import { Web3Provider } from "@ethersproject/providers";
-import WalletProvider from '.././containers/WalletWrapper';
-
-
+import WalletProvider from '../store/walletContext/WalletContext';
+import Navbar from '../components/Navbar/Navbar';
+import { getLibrary } from '../wallets/utils';
 
 function MyApp({ Component, pageProps }: AppProps) {
-
-  function getLibrary(provider: any): Web3Provider {
-    const library = new Web3Provider(provider);
-    library.pollingInterval = 12000;
-    return library;
-  }
 
   return (
     <ThemeProvider>
@@ -23,6 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <ContractProvider>
           <Web3ReactProvider getLibrary={getLibrary}>
             <WalletProvider>
+              <Navbar />
               <Component {...pageProps} />
             </WalletProvider>
           </Web3ReactProvider>

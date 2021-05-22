@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
-import WalletButton from "./WalletButton/WalletButton";
-import ClickAwayListener from "react-click-away-listener";
-import { WalletContext } from "../../containers/WalletWrapper";
-
+import React from "react";
+import { useWallets } from "../../store/walletContext/WalletContext";
+import dynamic from 'next/dynamic'
+const WalletButton = dynamic(() => import('./WalletButton/WalletButton'));
+const ClickAwayListener = dynamic(() => import('react-click-away-listener'));
 export interface Props {
 
 }
@@ -16,11 +16,13 @@ function WalletModal(props: Props) {
     handleConnect,
     activatingConnector,
     chainIdIsCorrect,
-    wallet } = useContext(WalletContext);
+    wallet } = useWallets();
 
   const handleClickAway = () => {
     setShowWalletModal(false);
   };
+
+
 
   const buttons = wallets.map((wallet) => (
     <WalletButton
@@ -54,4 +56,4 @@ function WalletModal(props: Props) {
   );
 }
 
-export default React.memo(WalletModal);
+export default WalletModal;

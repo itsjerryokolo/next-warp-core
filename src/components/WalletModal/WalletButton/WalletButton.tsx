@@ -1,5 +1,6 @@
-import React, { useContext } from "react";
-import { Check } from "../../Icons";
+import dynamic from "next/dynamic";
+import React from "react";
+const Check = dynamic(() => import('../../Icons').then(mod => mod.Check));
 
 export interface Props {
   name: string;
@@ -30,4 +31,4 @@ function WalletButton(props: Props) {
   );
 }
 
-export default React.memo(WalletButton);
+export default WalletButton;

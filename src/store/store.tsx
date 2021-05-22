@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useContext, useReducer } from "react";
 import { useActions, Actions } from "./action";
 import { applyMiddleware } from "./middleware";
 import { initialState, State, reducer } from "./reducers";
@@ -19,4 +19,8 @@ export function StoreProvider(props: any) {
       {props.children}
     </StoreContext.Provider>
   );
+}
+
+export function useStore() {
+  return useContext(StoreContext);
 }

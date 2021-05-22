@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 import { themes, Theme } from "./themes";
 
 interface ContextProps {
@@ -20,4 +20,8 @@ export function ThemeProvider(props: any) {
       {props.children}
     </ThemeContext.Provider>
   );
+}
+
+export function useTheme() {
+  return useContext(ThemeContext);
 }

@@ -2,16 +2,15 @@ import React, { useContext, useState } from "react";
 import { Linum } from "../Icons";
 import styles from "../../styles/Navbar.module.css";
 import Link from 'next/link'
-import { WalletContext } from "../../containers/WalletWrapper";
+import { useWallets } from "../../store/walletContext/WalletContext";
 
-export interface Props {
-}
 
-function Navbar(props: Props) {
+
+function Navbar() {
   const {
     setShowWalletModal,
     showWalletModal
-  } = useContext(WalletContext);
+  } = useWallets();
 
 
   // const shortAddress = `${address.slice(0, 6)}...${address.slice(
@@ -34,6 +33,6 @@ function Navbar(props: Props) {
   );
 }
 
-export default React.memo(Navbar);
+export default Navbar;
 
 

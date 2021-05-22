@@ -1,12 +1,11 @@
+import { AppContext } from 'next/app';
 import Head from 'next/head'
-import { useContext } from 'react'
-import Navbar from '../components/Navbar/Navbar'
 import WalletModal from '../components/WalletModal/WalletModal'
-import { WalletContext } from '../containers/WalletWrapper'
+import { useWallets } from '../store/walletContext/WalletContext';
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
-  const { showWalletModal } = useContext(WalletContext);
+  const { showWalletModal } = useWallets();
   return (
     <div className={styles.container}>
       <Head>
@@ -14,8 +13,13 @@ export default function Home() {
         <meta name="description" content="Linum Labs - Multi page react app boiler plate" />
         <link rel="icon" href="/linum_labs.svg" color="#F1F4F8" />
       </Head>
-      <Navbar />
       {showWalletModal && <WalletModal />}
     </div>
   )
+}
+
+export async function getServerSideProps(appContext: AppContext) {
+  return {
+    props: {},
+  }
 }
