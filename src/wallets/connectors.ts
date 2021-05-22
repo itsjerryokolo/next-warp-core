@@ -1,6 +1,5 @@
 import { InjectedConnector } from "@web3-react/injected-connector";
 import { PortisConnector } from "@web3-react/portis-connector";
-import { TorusConnector } from '@web3-react/torus-connector';
 
 export const supportedChains = {
   0: "Not connected",
@@ -41,24 +40,24 @@ export const injectedConnector = new InjectedConnector({
   ],
 });
 
-const initOptions = {
-  enableLogging: process.env.NODE_ENV === 'production' ? false : true,
-  network: {
-    host: chainIDToEndpoint[process.env.REACT_APP_CHAIN_ID as string],
-    chainId: parseInt(process.env.REACT_APP_CHAIN_ID as string),
-    networkName: chainIDToNetwork[process.env.REACT_APP_CHAIN_ID as string]
-  }
-}
+// const initOptions = {
+//   enableLogging: process.env.NODE_ENV === 'production' ? false : true,
+//   network: {
+//     host: chainIDToEndpoint[process.env.REACT_APP_CHAIN_ID as string],
+//     chainId: parseInt(process.env.REACT_APP_CHAIN_ID as string),
+//     networkName: chainIDToNetwork[process.env.REACT_APP_CHAIN_ID as string]
+//   }
+// }
 
-const constructorOptions = {
-  buttonPosition: "bottom-right"
-}
+// const constructorOptions = {
+//   buttonPosition: "bottom-right"
+// }
 
-const loginOptions = {
+// const loginOptions = {
 
-}
+// }
 
-export const torus = new TorusConnector({ chainId: parseInt(process.env.REACT_APP_CHAIN_ID), initOptions, constructorOptions, loginOptions });
+// export const torus = new TorusConnector({ chainId: parseInt(process.env.REACT_APP_CHAIN_ID), initOptions, constructorOptions, loginOptions });
 
 
 // local chain IDs like 1337 are not supported by default by web3-react's portis connector (kak dom).

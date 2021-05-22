@@ -8,10 +8,10 @@ export default function Home() {
   const { showWalletModal } = useWallets();
   return (
     <div className={styles.container}>
-      <Head>
-        <title>Next-Warp-Core</title>
-        <meta name="description" content="Linum Labs - Multi page react app boiler plate" />
-        <link rel="icon" href="/linum_labs.svg" color="#F1F4F8" />
+      <Head >
+        <title key="title">Next-Warp-Core</title>
+        <meta key="description" name="description" content="Linum Labs - Multi page react app boiler plate" />
+        <link key="favicon" rel="icon" href="/linum_labs.svg" color="#F1F4F8" />
       </Head>
       {showWalletModal && <WalletModal />}
     </div>

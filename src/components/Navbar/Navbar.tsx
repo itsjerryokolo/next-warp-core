@@ -17,11 +17,10 @@ function Navbar() {
   //   address.length - 5
   // )}`;
 
-
   return (
     <div className={styles.Navbar} >
       <Link href="/">
-        <Linum className={styles.logo} />
+        <a className="inner_link"><Linum className={styles.logo} /></a>
       </Link>
       <button
         className={styles.walletConnectButton}

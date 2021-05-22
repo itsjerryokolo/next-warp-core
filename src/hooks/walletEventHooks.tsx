@@ -10,12 +10,12 @@ function useInactiveListener(suppress = false) {
   useEffect(() => {
     const ethereum = state.provider;
     if (ethereum && ethereum.on && active && !suppress) {
-      const handleChainChanged = (chainId) => {
+      const handleChainChanged = (chainId: any) => {
         console.log("chainChanged", chainId);
         activate(injectedConnector);
       };
 
-      const handleAccountsChanged = (accounts) => {
+      const handleAccountsChanged = (accounts: any) => {
         console.log("accountsChanged", accounts);
         if (accounts.length > 0) {
           activate(injectedConnector);
@@ -26,7 +26,7 @@ function useInactiveListener(suppress = false) {
         }
       };
 
-      const handleNetworkChanged = (networkId) => {
+      const handleNetworkChanged = (networkId: any) => {
         console.log("networkChanged", networkId);
         activate(injectedConnector);
       };
@@ -44,7 +44,7 @@ function useInactiveListener(suppress = false) {
       };
     }
 
-    return () => {};
+    return () => { };
     // eslint-disable-next-line
   }, [state.isWalletConnected, active, suppress, activate]);
 }
