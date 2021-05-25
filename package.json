@@ -15,6 +15,7 @@
     "analyse:orphans": "yarn analyse:base --orphans"
   },
   "dependencies": {
+    "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
     "@ethersproject/providers": "^5.2.0",
     "@web3-react/core": "^6.1.9",
