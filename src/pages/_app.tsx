@@ -5,7 +5,7 @@ import { ThemeProvider } from ".././store/themeContext/themeContext";
 import { Web3ReactProvider } from "@web3-react/core";
 import { ContractProvider } from ".././store/contractContext/contractContext";
 import WalletProvider from '../store/walletContext/WalletContext';
-import Navbar from '../components/Navbar/Navbar';
+import Navbar from '../components/Navbar';
 import { getLibrary } from '../wallets/utils';
 
 function MyApp({ Component, pageProps }: AppProps) {

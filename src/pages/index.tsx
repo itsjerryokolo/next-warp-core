@@ -1,9 +1,9 @@
 import { AppContext } from 'next/app';
-import Head from 'next/head'
+import Head from 'next/head';
 import { Linum } from '../components/Icons';
-import WalletModal from '../components/WalletModal/WalletModal'
+import WalletModal from '../components/WalletModal';
 import { useWallets } from '../store/walletContext/WalletContext';
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.css';
 
 export default function Home() {
   const { showWalletModal } = useWallets();
