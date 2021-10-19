@@ -1,27 +1,27 @@
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-	enabled: process.env.ANALYZE === 'true'
-})
+/** @type {import('next').NextConfig} */
 
-const isProd = process.env.NODE_ENV === 'production';
+const liveDeploy = 'next-warp-core.vercel.app'; // TODO: this will need to be customized
+const localDev = 'localhost:3000';
 
-module.exports = withBundleAnalyzer({
-	compress: true,
-	future: {
-		webpack5: true,
-	},
-	webpack(config, options) {
-		const { dev, isServer } = options
-
-		config.module.rules.push({
-			test: /\.svg$/,
-			use: ["@svgr/webpack"]
-		});
-
-
-		return config;
-	},
-	i18n: {
-		locales: ['en-US'],
-		defaultLocale: 'en-US',
-	},
-})
+module.exports = {
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/i,
+      issuer: { and: [/\.(js|ts|md)x?$/] },
+      use: [
+        {
+          loader: '@svgr/webpack',
+          options: {
+            svgoConfig: { plugins: [{ removeViewBox: false }] },
+          },
+        },
+      ],
+    });
+    return config;
+  },
+  images: {
+    domains: [liveDeploy, localDev],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+  },
+};
