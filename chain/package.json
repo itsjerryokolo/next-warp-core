@@ -7,7 +7,7 @@
   "dependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.1",
     "@nomiclabs/hardhat-waffle": "^2.0.1",
-    "@openzeppelin/contracts": "3.3.0",
+    "@openzeppelin/contracts": "^4.3.2",
     "@types/chai": "^4.2.14",
     "@types/cli-progress": "^3.9.0",
     "@types/jest": "^26.0.16",
