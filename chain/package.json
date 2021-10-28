@@ -31,6 +31,10 @@
   },
   "scripts": {
     "chain": "hardhat node",
+    "fork": "MAINNET_ALCHEMY_KEY=$(grep MAINNET_ALCHEMY_KEY .env | cut -d '=' -f2) && yarn hardhat node --fork \"https://eth-mainnet.alchemyapi.io/v2/$MAINNET_ALCHEMY_KEY\"",
+    "fund:dai": "hardhat compile && hardhat run scripts/fundDai.ts",
+    "fund:eth": "hardhat run scripts/fundEth.ts",
+    "reset": "hardhat run scripts/reset.ts",
     "test:chain": "hardhat test",
     "compile": "hardhat compile",
     "deploy": "hardhat run scripts/deploy.ts",

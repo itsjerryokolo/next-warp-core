@@ -28,23 +28,23 @@ const config: HardhatUserConfig = {
     // networks without env vars set need to be commented out or they'll crash the script 
     // so only uncomment if the .env has been set
     // rinkeby: {
-    //   url: `https://rinkeby.infura.io/v3/${process.env.RINKEBY_INFURA_KEY}`,
+    //   url: `https://eth-rinkeby.alchemyapi.io/v2/${process.env.RINKEBY_ALCHEMY_KEY}`,
     //   accounts: [`${process.env.RINKEBY_DEPLOYER_PRIV_KEY}`],
     // },
     // mainnet: {
-    //   url: `https://mainnet.infura.io/v3/${process.env.MAINNET_INFURA_KEY}`,
+    //   url: `https://eth-mainnet.alchemyapi.io/v2/${process.env.MAINNET_ALCHEMY_KEY}`,
     //   accounts: [`${process.env.MAINNET_DEPLOYER_PRIV_KEY}`],
     // },
     // kovan: {
-    //   url: `https://kovan.infura.io/v3/${process.env.KOVAN_INFURA_KEY}`,
+    //   url: `https://eth-kovan.alchemyapi.io/v2/${process.env.KOVAN_ALCHEMY_KEY}`,
     //   accounts: [`${process.env.KOVAN_DEPLOYER_PRIV_KEY}`],
     // },
     // ropsten: {
-    //   url: `https://ropsten.infura.io/v3/${process.env.ROPSTEN_INFURA_KEY}`,
+    //   url: `https://eth-ropsten.alchemyapi.io/v2/${process.env.ROPSTEN_ALCHEMY_KEY}`,
     //   accounts: [`${process.env.ROPSTEN_DEPLOYER_PRIV_KEY}`],
     // },
     // goerli: {
-    //   url: `https://goerli.infura.io/v3/${process.env.GOERLI_INFURA_KEY}`,
+    //   url: `https://eth-goerli.alchemyapi.io/v2/${process.env.GOERLI_ALCHEMY_KEY}`,
     //   accounts: [`${process.env.GOERLI_DEPLOYER_PRIV_KEY}`],
     // },
     // xdai: {
@@ -53,9 +53,29 @@ const config: HardhatUserConfig = {
     //   accounts: [`${process.env.XDAI_DEPLOYER_PRIV_KEY}`],
     // },
     // mumbai: {
-    //   url: "https://polygon-mumbai.g.alchemy.com/v2/" + process.env.MUMBAI_ALCHEMY_API,
+    //   url: `https://polygon-mumbai.g.alchemy.com/v2/${process.env.MUMBAI_ALCHEMY_API}`,
     //   accounts: [`${process.env.MUMBAI_DEPLOYER_PRIV_KEY}`],
     //   chainId: 80001,
+    // },
+    // optimism: {
+    //   url: `https://opt-mainnet.g.alchemy.com/v2/${process.env.OPTIMISM_ALCHEMY_API}`,
+    //   accounts: [`${process.env.OPTIMISM_DEPLOYER_PRIV_KEY}`],
+    //   chainId: 10,
+    // },
+    // optimism-kovan: {
+    //   url: `https://opt-kovan.g.alchemy.com/v2/${process.env.OPTIMISM_TEST_ALCHEMY_API}`,
+    //   accounts: [`${process.env.OPTIMISM_TEST_DEPLOYER_PRIV_KEY}`],
+    //   chainId: 69,
+    // },
+    // arbitrum: {
+    //   url: `https://arb-mainnet.g.alchemy.com/v2/${process.env.ARBITRUM_ALCHEMY_API}`,
+    //   accounts: [`${process.env.ARBITRUM_DEPLOYER_PRIV_KEY}`],
+    //   chainId: 42161,
+    // },
+    // arbitrum-rinkeby: {
+    //   url: `https://arb-rinkeby.g.alchemy.com/v2/${process.env.ARBITRUM_TEST_ALCHEMY_API}`,
+    //   accounts: [`${process.env.ARBITRUM_TEST_DEPLOYER_PRIV_KEY}`],
+    //   chainId: 421611,
     // },
   },
   etherscan: {
