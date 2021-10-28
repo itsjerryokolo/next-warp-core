@@ -52,6 +52,11 @@ const config: HardhatUserConfig = {
     //   gasPrice: 1000000000,
     //   accounts: [`${process.env.XDAI_DEPLOYER_PRIV_KEY}`],
     // },
+    // mumbai: {
+    //   url: "https://polygon-mumbai.g.alchemy.com/v2/" + process.env.MUMBAI_ALCHEMY_API,
+    //   accounts: [`${process.env.MUMBAI_DEPLOYER_PRIV_KEY}`],
+    //   chainId: 80001,
+    // },
   },
   etherscan: {
     apiKey: process.env.ETHERSCAN_API_KEY
