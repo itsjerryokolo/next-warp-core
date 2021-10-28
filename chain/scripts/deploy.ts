@@ -13,7 +13,7 @@ interface DeploymentObject {
 }
 
 // custom `deploy` in order to make verifying easier
-const deploy = async (contractName: string, _args = [], overrides = {}, libraries = {}) => {
+const deploy = async (contractName: string, _args: any[] = [], overrides = {}, libraries = {}) => {
   console.log(` 🛰  Deploying: ${contractName}`);
 
   const contractArgs: any = _args || [];
@@ -36,7 +36,7 @@ const deploy = async (contractName: string, _args = [], overrides = {}, librarie
 
 const pause = (time: number) => new Promise(resolve => setTimeout(resolve, time));
 
-const verifiableNetwork = ["mainnet", "ropsten", "rinkeby", "goerli", "kovan"];
+const verifiableNetwork = ["mainnet", "ropsten", "rinkeby", "goerli", "kovan", "mumbai"];
 
 async function main() {
   const network = process.env.HARDHAT_NETWORK === undefined ? "localhost" : process.env.HARDHAT_NETWORK;
